@@ -8,7 +8,9 @@ const Input = ({ todoList, setTodoList }) => {
     setText(e.target.value);
   };
 
-  const handlePlusButton = () => {
+  const handlePlusButton = (e) => {
+    e.preventDefault();
+
     //todoList에 input 값 추가
     const newTodoList = todoList.concat({
       id: Date.now(),
@@ -19,7 +21,7 @@ const Input = ({ todoList, setTodoList }) => {
   };
 
   return (
-    <div className="todo-input">
+    <form onSubmit={handlePlusButton} className="todo-input">
       <input
         className="input-box"
         type="text"
@@ -27,10 +29,10 @@ const Input = ({ todoList, setTodoList }) => {
         placeholder="할 일을 입력하세요"
         onChange={handleInput}
       />
-      <button className="plus-btn" type="submit" onClick={handlePlusButton}>
+      <button className="plus-btn" type="submit">
         ➕
       </button>
-    </div>
+    </form>
   );
 };
 
