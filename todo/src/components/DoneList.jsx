@@ -1,11 +1,7 @@
 import React from 'react';
 
 const DoneList = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <div></div>;
 };
 
 export default DoneList;

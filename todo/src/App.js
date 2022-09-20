@@ -1,7 +1,7 @@
-import React from "react";
-import Input from  "./components/Input";
-import TodoList from "./components/TodoList";
-import DoneList from "./components/DoneList";
+import React from 'react';
+import Input from './components/Input';
+import TodoList from './components/TodoList';
+import DoneList from './components/DoneList';
 
 function App() {
   return (
