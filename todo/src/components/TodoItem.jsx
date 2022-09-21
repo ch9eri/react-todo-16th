@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const TodoItem = ({ todoItem, todoList, setTodoList }) => {
   const { id, text } = todoItem;
@@ -8,21 +9,23 @@ const TodoItem = ({ todoItem, todoList, setTodoList }) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
+  //todo->done & done->todo (Checked 추가)
   const Toggle = (id) => {
     setTodoList(
       todoList.map((todo) =>
         todo.id === id ? { ...todo, Checked: !todo.Checked } : todo
       )
     );
-    console.log('toggled');
   };
 
   return (
     <li>
       <span onClick={() => Toggle(id)}>{todoItem.text}</span>
-      <button onClick={() => Delete(id)}>🗑</button>
+      <DelBtn onClick={() => Delete(id)}>🗑</DelBtn>
     </li>
   );
 };
+
+const DelBtn = styled.button``;
 
 export default TodoItem;

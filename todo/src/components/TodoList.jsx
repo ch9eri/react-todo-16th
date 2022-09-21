@@ -1,14 +1,15 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import styled from 'styled-components';
 
 const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
   const todosList = todoList.filter((todo) => todo.Checked === false);
   const donesList = todoList.filter((todo) => todo.Checked === true);
 
   return (
-    <div>
-      <p className="todoTitle">To Do ({todosList.length})</p>
-      <ul className="todoList">
+    <AllList>
+      <ListTitle>To Do ({todosList.length})</ListTitle>
+      <List>
         {todosList.map((todoItem) => (
           <TodoItem
             key={todoItem.id}
@@ -19,9 +20,10 @@ const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
             Toggle={Toggle}
           />
         ))}
-      </ul>
-      <p className="doneTitle">Done ({donesList.length})</p>
-      <ul className="doneList">
+      </List>
+      <Line />
+      <ListTitle>Done ({donesList.length})</ListTitle>
+      <List>
         {donesList.map((todoItem) => (
           <TodoItem
             key={todoItem.id}
@@ -32,9 +34,25 @@ const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
             Toggle={Toggle}
           />
         ))}
-      </ul>
-    </div>
+      </List>
+    </AllList>
   );
 };
+
+const AllList = styled.div``;
+
+const ListTitle = styled.p`
+  font-size: 20px;
+`;
+
+const List = styled.ul`
+  height: 150px;
+  overflow: auto;
+`;
+
+const Line = styled.hr`
+  border: 0px;
+  border-top: 4px dashed pink;
+`;
 
 export default TodoList;

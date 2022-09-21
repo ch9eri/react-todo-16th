@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Input = ({ todoList, setTodoList }) => {
   const [text, setText] = useState('');
@@ -22,19 +23,32 @@ const Input = ({ todoList, setTodoList }) => {
   };
 
   return (
-    <form onSubmit={handlePlusButton} className="todo-input">
-      <input
-        className="input-box"
+    <InputForm onSubmit={handlePlusButton}>
+      <InputBox
         type="text"
         value={text}
-        placeholder="할 일을 입력하세요"
+        placeholder="  할 일을 입력하고 ➕ or ↵(Enter)"
         onChange={handleInput}
       />
-      <button className="plus-btn" type="submit">
-        ➕
-      </button>
-    </form>
+      <PlusBtn type="submit">➕</PlusBtn>
+    </InputForm>
   );
 };
+
+const InputForm = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const InputBox = styled.input`
+  width: 400px;
+  height: 50px;
+  border: 4px solid pink;
+  border-radius: 20px;
+  font-size: 20px;
+`;
+
+const PlusBtn = styled.button``;
 
 export default Input;
