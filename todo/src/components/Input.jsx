@@ -15,7 +15,7 @@ const Input = ({ todoList, setTodoList }) => {
     const newTodoList = todoList.concat({
       id: Date.now(),
       text,
-      checked: false,
+      Checked: false,
     });
     setTodoList(newTodoList);
     setText('');

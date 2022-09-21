@@ -8,10 +8,14 @@ const TodoItem = ({ todoItem, todoList, setTodoList }) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
-  const Toggle= (id)=>{
-    setTodoList(todoList.map((todo)=>todo.id === id ? { ... todo, Checked: !todo.Checked} : todo));
+  const Toggle = (id) => {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id ? { ...todo, Checked: !todo.Checked } : todo
+      )
+    );
     console.log('toggled');
-    };
+  };
 
   return (
     <li>

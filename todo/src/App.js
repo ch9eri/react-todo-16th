@@ -3,7 +3,6 @@ import Input from './components/Input';
 import TodoList from './components/TodoList';
 //import styled from "styled-components";
 
-
 function App() {
   const [todoList, setTodoList] = useState([]);
 
