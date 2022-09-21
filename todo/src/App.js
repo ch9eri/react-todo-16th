@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Input todoList={todoList} setTodoList={setTodoList} />
-      <TodoList />
+      <TodoList todoList={todoList} setTodoList={setTodoList} />
       <DoneList />
     </div>
   );
