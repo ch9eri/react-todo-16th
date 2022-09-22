@@ -19,12 +19,17 @@ const TodoItem = ({ todoItem, todoList, setTodoList }) => {
   };
 
   return (
-    <li>
-      <span onClick={() => Toggle(id)}>{todoItem.text}</span>
+    <TodoLi>
+      <Todo onClick={() => Toggle(id)}>{todoItem.text}</Todo>
       <DelBtn onClick={() => Delete(id)}>🗑</DelBtn>
-    </li>
+    </TodoLi>
   );
 };
+const TodoLi = styled.li``;
+
+const Todo = styled.span`
+  font-size: 20px;
+`;
 
 const DelBtn = styled.button``;
 

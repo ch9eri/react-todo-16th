@@ -8,6 +8,7 @@ const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
 
   return (
     <AllList>
+      <Line />
       <ListTitle>To Do ({todosList.length})</ListTitle>
       <List>
         {todosList.map((todoItem) => (
@@ -39,10 +40,16 @@ const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
   );
 };
 
-const AllList = styled.div``;
+const AllList = styled.div`
+  margin-top: 20px;
+`;
 
-const ListTitle = styled.p`
+const ListTitle = styled.span`
   font-size: 20px;
+  background-color: pink;
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 10px;
 `;
 
 const List = styled.ul`
@@ -53,6 +60,7 @@ const List = styled.ul`
 const Line = styled.hr`
   border: 0px;
   border-top: 4px dashed pink;
+  margin-bottom: 25px;
 `;
 
 export default TodoList;

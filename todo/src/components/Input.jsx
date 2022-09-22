@@ -41,7 +41,7 @@ const InputForm = styled.form`
   align-items: center;
 `;
 
-const InputBox = styled.input`
+const InputBox = styled.input.attrs({ required: true })`
   width: 400px;
   height: 50px;
   border: 4px solid pink;
