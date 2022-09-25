@@ -30,7 +30,7 @@ const Input = ({ todoList, setTodoList }) => {
         placeholder="  할 일을 입력하고 ➕ or ↵(Enter)"
         onChange={handleInput}
       />
-      <PlusBtn type="submit">➕</PlusBtn>
+      <button type="submit">➕</button>
     </InputForm>
   );
 };
@@ -48,7 +48,5 @@ const InputBox = styled.input.attrs({ required: true })`
   border-radius: 20px;
   font-size: 20px;
 `;
-
-const PlusBtn = styled.button``;
 
 export default Input;
