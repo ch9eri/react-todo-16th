@@ -20,7 +20,7 @@ const TodoItem = ({ todoItem, todoList, setTodoList }) => {
 
   return (
     <TodoLi>
-      <Todo onClick={() => Toggle(id)}>{todoItem.text}</Todo>
+      <Todo onClick={() => Toggle(id)}>{text}</Todo>
       <DelBtn onClick={() => Delete(id)}>🗑</DelBtn>
     </TodoLi>
   );
