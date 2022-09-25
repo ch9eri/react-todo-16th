@@ -10,7 +10,7 @@ const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
     <AllList>
       <Line />
       <ListTitle>To Do ({todosList.length})</ListTitle>
-      <List>
+      <List done={false}>
         {todosList.map((todoItem) => (
           <TodoItem
             key={todoItem.id}
@@ -24,7 +24,7 @@ const TodoList = ({ todoList, setTodoList, Delete, Toggle }) => {
       </List>
       <Line />
       <ListTitle>Done ({donesList.length})</ListTitle>
-      <List>
+      <List done={true}>
         {donesList.map((todoItem) => (
           <TodoItem
             key={todoItem.id}
@@ -55,6 +55,13 @@ const ListTitle = styled.span`
 const List = styled.ul`
   height: 150px;
   overflow: auto;
+
+  ${(props) =>
+    props.done &&
+    `
+      text-decoration: line-through;
+      color: gray;
+    `}
 `;
 
 const Line = styled.hr`
