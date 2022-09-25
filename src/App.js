@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Helvetica", "Arial", sans-serif;
         width: 100%;
         height: 100%;
+        background-color: pink;
     }
 
     button {
@@ -57,7 +58,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: pink;
   flex-direction: column;
 `;
 
